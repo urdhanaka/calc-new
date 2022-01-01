@@ -11,31 +11,26 @@ int charToInt(int batas_kiri, int batas_kanan, string arr) {
 
 int main() {
 	string input;
-	int a = 0, b = 0, res;
+	int a = 0, b = 0, res, flag = 0;
 	cin >> input;
-	if ((input[0] > '9' || input[0] < '0') || (input[input.length() - 1] > '9' || input[input.length() - 1] < '0')) {
+	for (int i = 0; i < input.length(); i++) {
+		if (input[i] < '0' || input[i] > '9') {
+			flag++;
+		}
+	}
+	
+	if (flag != 1) {
 		cout << "Invalid operation";
-		return 0;
 	} else {
 		for (int i = 0; i < input.length(); i++) {
 			if (input[i] == '+') {
-				if (input[i + 1] == '+' || input[i + 1] == '-') {
-					cout << "Invalid operation";
-					return 0;
-				} else {
-					a = charToInt(0, i - 1, input);
-					b = charToInt(i + 1, input.length() - 1, input);
-					res = a + b;
-				}
+				a = charToInt(0, i - 1, input);
+				b = charToInt(i + 1, input.length() - 1, input);
+				res = a + b;
 			} else if (input[i] == '-') {
-				if (input[i + 1] == '+' || input[i + 1] == '-') {
-					cout << "Invalid operation";
-					return 0;
-				} else {
-					a = charToInt(0, i - 1, input);
-					b = charToInt(i + 1, input.length() - 1, input);
-					res = a - b;
-				}
+				a = charToInt(0, i - 1, input);
+				b = charToInt(i + 1, input.length() - 1, input);
+				res = a - b;
 			}
 		}
 		cout << res << "\n";
