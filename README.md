@@ -4,12 +4,16 @@
 # Input Output Example
 Input :
 > 121+122
+
 > +23+123
+
 >  -23-124
 
 Output : 
 > 243
+
 > Invalid operation
+
 > invalid operation
 
 
