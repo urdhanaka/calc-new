@@ -15,5 +15,3 @@ Output :
 > Invalid operation
 
 > invalid operation
-
-
